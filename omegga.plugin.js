@@ -10,7 +10,7 @@ module.exports = class fetchall {
 		Omegga
 		.on('cmd:fetchall', async (name, ...args) => {
 			const player = Omegga.getPlayer(name);
-			const isAuthorized = p => p.isHost() || (p.getRoles() == 'Admin');
+			const isAuthorized = p => p.isHost() || (p.getRoles().includes('Admin'));
 			if (!isAuthorized(player)) return; // you're not an admin, too bad. 
 
 			// if only /fetchall is typed in.
